@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+    #kwadrat { width: 150px; height: 150px; background: lightgray; }
+  </style>
+</head>
+<body>
+  <button id="przywitaj">Przywitaj się</button>
+  <button id="reset">resetuj</button>
+  <p id="komunikat"></p>
+ 
+  <div id="kwadrat"></div>
+ 
+  <script>
+    $(function() {
+
+        
+
+      $("#kwadrat").click(function(){
+        $("#kwadrat").css("background-color", "red");
+      });
+
+    $("#reset").on('click', function(){
+        $("#kwadrat").css("background-color", "lightgray");
+        $('#komunikat').text() = "";
+      });
+      let i = 0;
+    $("#kwadrat").click(function(){
+        i++
+        $("p").text()=("klikinieto" + i + "razy")
+      });
+
+  
+    });
+  </script>
+</body>
+</html>
