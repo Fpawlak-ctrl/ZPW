@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+
+  </style>
+    <script>
+         $(function(){
+           $("#naKoniec").click(function(){
+            let wpisanyProdukt = $("#produkt").val();
+                if(wpisanyProdukt != 0){
+                $("ul").append("<li>" + wpisanyProdukt + "</li>")
+                $("li").last().css("color", "green");
+            }
+            $("#produkt").val("");
+            });
+
+            $("#naPoczatek").click(function(){
+                let wpisanyProdukt = $("#produkt").val();
+                if(wpisanyProdukt != 0){
+                $("ul").prepend("<li>" + wpisanyProdukt + "</li>").css();
+                $("li").first().css("color", "red");
+            }
+            $("#produkt").val("");
+            });
+
+        })
+    </script>
+
+
+</head>
+<body>
+
+    <ul id="lista">
+      <li>Chleb</li>
+      <li>Mleko</li>
+    </ul>
+
+    <input type="text" id="produkt" placeholder="Nazwa produktu">
+
+    <button id="naKoniec">Dodaj na koniec</button>
+
+    <button id="naPoczatek">Dodaj na początek</button>
+
+</body>
+</html>
