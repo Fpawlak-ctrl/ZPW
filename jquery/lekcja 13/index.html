@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            $("#sprawdz").click(function(){
+                if($("#tekst").val().trim() ===""){
+                    $("#komunikat").text("to pole jest puste");
+                }else{
+                $("#komunikat").text(("#tekst").val());    
+                }
+            })
+            $("#send").click(function(){
+                if($("#surname").val().trim() ===""){
+                    $("#wyswietl").text("podaj nazwisko").css("background-color", "red");
+                }else{
+                $("#wyswietl").text("wyslano forma").css("background-color", "green");    
+                }
+            })
+             $("#sprawdz2").click(function(){
+                let wiek = $("#wiek").val();
+                if(isNaN(wiek)){
+                    $("#blad").text("wiek musi byc liczba")
+                }else{
+                $("#blad").text("Masz " + wiek + " lat");    
+                }
+            })
+            $("#zapisz").click(function(){
+                let ocena = $("#ocena").val();
+                if(isNaN(ocena)){
+                    $("#blad2").text("to nie jest liczba")
+                }else if (ocena > 6 || ocena < 1){
+                $("#blad2").text("ocena ma byc z zakresu 1-6");    
+                }else{
+                    $("#blad2").text("zapisano ocene: " + ocena); 
+                }
+            })
+    })
+    </script>
+</head>
+<body>
+    <input type="text" id="tekst">
+    <input type="button" id="sprawdz" value="Check">
+    <p id="komunikat"></p>
+
+    <label for="surname">Nazwisko</label>
+    <input type="text" id="surname">
+    <button id="send">wyslij</button>
+    <p id="wyswietl"></p>
+
+    <label for="wiek">Wiek</label>
+    <input type="text" id="wiek">
+    <button id="sprawdz2">sprawdz</button>
+    <p id="blad"></p>
+
+    <label for="ocena">ocena</label>
+    <input type="text" id="ocena">
+    <button id="zapisz">Zapisz</button>
+    <p id="blad2"></p>
+
+
+</body>
+</html>

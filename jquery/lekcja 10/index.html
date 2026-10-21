@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+            let num = 0;
+        $("#przycisk").on("click", function(){
+            if(num == 0){
+            $("#tekst").hide()
+            num++;
+        }else{
+            $("#tekst").show()
+            num--
+        }
+        })
+        //let num2 = 0;
+        $("#przycisk2").on("click", function(){
+            $("#tekst2").slideUp()
+     
+        })
+        $("#przycisk2").on("click", function(){
+            $("#tekst2").slideDown()
+        })
+         $("#przycisk3").on("click", function(){
+            $("#tekst3").toggle()
+        })
+         $("#przycisk4").on("click", function(){
+            $("#tekst4").slideToggle()
+        })
+        
+//toggle()
+//slideup
+//slidedown
+//slidetoggle
+    })
+    </script>
+</head>
+<body>
+    <p id="tekst">jestem</p>
+    <button id="przycisk">Przycisk</button>
+
+    <p id="tekst2">slide</p>
+    <button id="przycisk2">Przycisk2</button>
+    
+    <p id="tekst3">toggle</p>
+    <button id="przycisk3">Przycisk3</button>
+
+      <p id="tekst4">slidetoggle</p>
+    <button id="przycisk4">Przycisk4</button>
+</body>
+</html>
