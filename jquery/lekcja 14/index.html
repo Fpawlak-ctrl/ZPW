@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+        src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao="
+        crossorigin="anonymous">
+    </script>
+    <script>
+        $(function(){
+
+            $("#szukaj").keypress("Enter", function(e){
+                if(e.key == "Enter"){
+                    let input = $("#szukaj").val().trim();
+
+                    if(input === ""){
+                       $("#wynik").text("Wpisz Frazę!").css("color", "red"); 
+                    }else{
+                    $("#wynik").text(input).css("color", "black");
+                    }
+                }else if ((e.key == "Escape")){
+                    $("#wynik").text("")
+                }
+        })
+
+            $("#rozmiar").change(function(){
+                $("#tekst").text("Przykładowy tekst akapitu. " + (this).val().css("font-size", (this).val()))
+            })
+
+
+    })
+    </script>
+</head>
+<body>
+    <input type="text" id="szukaj" placeholder="Szukaj...">
+    <p id="wynik"></p>
+
+    <input type="password" id="haslo">
+    <p id="sila"></p>
+
+
+
+
+    <select id="rozmiar">
+        <option value="14">Mały</option>
+        <option value="20">Średni</option>
+        <option value="28">Duży</option>
+    </select>
+        <p id="tekst">Przykładowy tekst akapitu.</p>
+</body>
+</html>
